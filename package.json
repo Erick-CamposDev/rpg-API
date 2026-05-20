@@ -1,0 +1,25 @@
+{
+  "name": "rpg-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx --env-file=.env src/server.ts",
+    "watch": "tsx --watch --env-file=.env src/server.ts",
+    "build:": "tsup src",
+    "start:": "build && node dist/server.js"
+  },
+  "keywords": [],
+  "author": "Erick Campos",
+  "license": "MIT",
+  "description": "RPG api for invetory and items management control",
+  "devDependencies": {
+    "@types/node": "^25.9.1",
+    "tsup": "^8.5.1",
+    "tsx": "^4.22.3",
+    "typescript": "^6.0.3"
+  },
+  "dependencies": {
+    "@types/express": "^5.0.6",
+    "express": "^5.2.1"
+  }
+}
