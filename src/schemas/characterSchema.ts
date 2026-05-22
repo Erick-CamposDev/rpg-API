@@ -38,7 +38,7 @@ const mageSchema = z.object({
   inventory: inventorySchema,
 });
 
-type Character =
+export type Character =
   | z.infer<typeof warriorSchema>
   | z.infer<typeof tankSchema>
   | z.infer<typeof mageSchema>;
