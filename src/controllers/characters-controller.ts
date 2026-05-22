@@ -1,7 +1,8 @@
 import { Request, Response } from "express";
+import getAllCharactersService from "../services/characters-services/getAllCharacters";
 
 export async function getAllCharacters(req: Request, res: Response) {
-  const data = await getAllCharactersServices();
+  const data = await getAllCharactersService();
 
-  res.status(data.status).json(data.body);
+  res.status(data.statusCode).json(data.body);
 }

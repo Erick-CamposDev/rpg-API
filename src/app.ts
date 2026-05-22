@@ -7,9 +7,9 @@ export default function createApp() {
   const app = express();
   app.use(json());
 
-  app.use("/character", characterRoute);
-  app.use("/invetory", invetoryRoute);
-  app.use("/items", itemRouter);
+  app.use("/rpgAPI", characterRoute);
+  app.use("/rpgAPI", invetoryRoute);
+  app.use("/rpgAPI", itemRouter);
 
   return app;
 }

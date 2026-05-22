@@ -4,5 +4,5 @@ import { Character } from "../schemas/characterSchema";
 
 export interface responseModel {
   statusCode: StatusCode;
-  body: items | Character | string;
+  body: items | Character | Character[] | items[] | string;
 }
