@@ -1,0 +1,90 @@
+import { Character } from "../schemas/characterSchema";
+
+export const characterData: Character[] = [
+    {
+        id: 1,
+        name: "Hayashi",
+        type: "Warrior",
+        baseAttackDamage: 50,
+        baseDefense: 20,
+        baseHealthPoints: 150,
+        level: 5,
+        maxWeight: 100,
+        inventory: {
+            armorSlots: [],
+            items: []
+        }
+    },
+    {
+        id: 2,
+        name: "Ironside",
+        type: "Tank",
+        baseAttackDamage: 35,
+        baseDefense: 60,
+        baseHealthPoints: 200,
+        level: 8,
+        maxWeight: 150,
+        inventory: {
+            armorSlots: [],
+            items: []
+        }
+    },
+    {
+        id: 3,
+        name: "Arcana",
+        type: "Mage",
+        baseAttackDamage: 25,
+        baseManaPoints: 80,
+        baseDefense: 15,
+        baseHealthPoints: 120,
+        level: 6,
+        maxWeight: 60,
+        inventory: {
+            armorSlots: [],
+            items: []
+        }
+    },
+    {
+        id: 4,
+        name: "Gunther",
+        type: "Warrior",
+        baseAttackDamage: 55,
+        baseDefense: 25,
+        baseHealthPoints: 180,
+        level: 10,
+        maxWeight: 120,
+        inventory: {
+            armorSlots: [],
+            items: []
+        }
+    },
+    {
+        id: 5,
+        name: "Fortress",
+        type: "Tank",
+        baseAttackDamage: 30,
+        baseDefense: 70,
+        baseHealthPoints: 250,
+        level: 12,
+        maxWeight: 180,
+        inventory: {
+            armorSlots: [],
+            items: []
+        }
+    },
+    {
+        id: 6,
+        name: "Merlin",
+        type: "Mage",
+        baseAttackDamage: 40,
+        baseManaPoints: 100,
+        baseDefense: 20,
+        baseHealthPoints: 130,
+        level: 9,
+        maxWeight: 70,
+        inventory: {
+            armorSlots: [],
+            items: []
+        }
+    }
+]
