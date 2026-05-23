@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import getAllCharactersService from "../services/characters-services/getAllCharacters";
 import getCharacterByIdService from "../services/characters-services/getCharacterById";
+import deleteCharacterByIdService from "../services/characters-services/deleteCharacterById";
 import idParamModel from "../models/paramsModel";
 
 export async function getAllCharacters(req: Request, res: Response) {
@@ -15,6 +16,16 @@ export async function getCharacterById(
 ) {
   const id = req.params.id;
   const data = await getCharacterByIdService(id);
+
+  res.status(data.statusCode).json(data.body);
+}
+
+export async function deleteCharacterById(
+  req: Request<idParamModel>,
+  res: Response,
+) {
+  const id = req.params.id;
+  const data = await deleteCharacterByIdService(id);
 
   res.status(data.statusCode).json(data.body);
 }

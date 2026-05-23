@@ -1,3 +1,4 @@
+import { parseIsolatedEntityName } from "typescript";
 import { characterData } from "../data/character-data";
 import { Character } from "../schemas/characterSchema";
 
@@ -10,4 +11,17 @@ export const getCharacterId = async (id: string) => {
     (character: Character) => parseInt(id) === character.id,
   );
   return foundCharacter;
+};
+
+export const deleteCharacterId = async (id: string) => {
+  const index = characterData.findIndex(
+    (character: Character) => parseInt(id) === character.id,
+  );
+
+  if (index === -1) {
+    return false;
+  }
+
+  characterData.splice(index, 1);
+  return true;
 };
