@@ -1,4 +1,3 @@
-import { parseIsolatedEntityName } from "typescript";
 import { characterData } from "../data/character-data";
 import { Character } from "../schemas/characterSchema";
 
