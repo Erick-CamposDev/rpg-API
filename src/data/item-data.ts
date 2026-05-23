@@ -8,6 +8,7 @@ export const itemData: items[] = [
     weight: 5.5,
     rarity: "Common",
     damage: 10,
+    itemType: "Weapon",
   },
   {
     id: 2,
@@ -15,6 +16,7 @@ export const itemData: items[] = [
     weight: 3.2,
     rarity: "Common",
     damage: 8,
+    itemType: "Weapon",
   },
   // ARMAS - RARE
   {
@@ -23,6 +25,7 @@ export const itemData: items[] = [
     weight: 7.8,
     rarity: "Rare",
     damage: 20,
+    itemType: "Weapon",
   },
   {
     id: 4,
@@ -30,6 +33,7 @@ export const itemData: items[] = [
     weight: 2.1,
     rarity: "Rare",
     damage: 18,
+    itemType: "Weapon",
   },
   // ARMAS - EPIC
   {
@@ -39,6 +43,7 @@ export const itemData: items[] = [
     rarity: "Common",
     damage: 30,
     bonus: 0.5,
+    itemType: "Weapon",
   },
   {
     id: 6,
@@ -47,6 +52,7 @@ export const itemData: items[] = [
     rarity: "Common",
     damage: 28,
     bonus: 0.75,
+    itemType: "Weapon",
   },
   // ARMAS - MYTHIC
   {
@@ -55,6 +61,7 @@ export const itemData: items[] = [
     rarity: "Common",
     damage: 38,
     bonus: 1.2,
+    itemType: "Weapon",
   },
   {
     id: 8,
@@ -62,6 +69,7 @@ export const itemData: items[] = [
     rarity: "Common",
     damage: 37,
     bonus: 0.8,
+    itemType: "Weapon",
   },
   // ARMAS - LEGENDARY
   {
@@ -72,6 +80,7 @@ export const itemData: items[] = [
     damage: 50,
     bonus: 2.0,
     specialAttack: "Divine Strike",
+    itemType: "Weapon",
   },
   {
     id: 10,
@@ -81,6 +90,7 @@ export const itemData: items[] = [
     damage: 45,
     bonus: 1.5,
     specialAttack: "Death Harvest",
+    itemType: "Weapon",
   },
   // ARMADURAS - COMMON
   {
@@ -90,6 +100,7 @@ export const itemData: items[] = [
     defense: 10,
     rarity: "Common",
     armorType: ["Chestplate"],
+    itemType: "Armor",
   },
   {
     id: 12,
@@ -98,6 +109,7 @@ export const itemData: items[] = [
     defense: 8,
     rarity: "Common",
     armorType: ["Helmet"],
+    itemType: "Armor",
   },
   // ARMADURAS - RARE
   {
@@ -107,6 +119,7 @@ export const itemData: items[] = [
     defense: 20,
     rarity: "Rare",
     armorType: ["Chestplate"],
+    itemType: "Armor",
   },
   {
     id: 14,
@@ -115,6 +128,7 @@ export const itemData: items[] = [
     defense: 15,
     rarity: "Rare",
     armorType: ["Boots"],
+    itemType: "Armor",
   },
   // ARMADURAS - EPIC
   {
@@ -125,6 +139,7 @@ export const itemData: items[] = [
     rarity: "Epic",
     bonus: 0.3,
     armorType: ["Chestplate", "Helmet"],
+    itemType: "Armor",
   },
   {
     id: 16,
@@ -134,6 +149,7 @@ export const itemData: items[] = [
     rarity: "Epic",
     bonus: 0.4,
     armorType: ["Pants"],
+    itemType: "Armor",
   },
   // ARMADURAS - MYTHIC
   {
@@ -144,6 +160,7 @@ export const itemData: items[] = [
     rarity: "Mythic",
     bonus: 0.8,
     armorType: ["Chestplate", "Pants", "Boots"],
+    itemType: "Armor",
   },
   {
     id: 18,
@@ -153,6 +170,7 @@ export const itemData: items[] = [
     rarity: "Mythic",
     bonus: 0.6,
     armorType: ["Helmet"],
+    itemType: "Armor",
   },
   // ARMADURAS - LEGENDARY
   {
@@ -163,6 +181,7 @@ export const itemData: items[] = [
     rarity: "Legendary",
     bonus: 1.5,
     armorType: ["Chestplate", "Helmet", "Pants", "Boots"],
+    itemType: "Armor",
   },
   {
     id: 20,
@@ -172,6 +191,7 @@ export const itemData: items[] = [
     rarity: "Legendary",
     bonus: 2.0,
     armorType: ["Chestplate", "Pants"],
+    itemType: "Armor",
   },
   // POÇÕES - LIFE
   {
@@ -180,6 +200,7 @@ export const itemData: items[] = [
     weight: 0.3,
     type: "life",
     lifeToRestore: 25,
+    itemType: "Consumable",
   },
   {
     id: 22,
@@ -187,6 +208,7 @@ export const itemData: items[] = [
     weight: 0.4,
     type: "life",
     lifeToRestore: 50,
+    itemType: "Consumable",
   },
   {
     id: 23,
@@ -194,6 +216,7 @@ export const itemData: items[] = [
     weight: 0.5,
     type: "life",
     lifeToRestore: 100,
+    itemType: "Consumable",
   },
   // POÇÕES - MANA
   {
@@ -202,6 +225,7 @@ export const itemData: items[] = [
     weight: 0.35,
     type: "mana",
     manaToRestore: 50,
+    itemType: "Consumable",
   },
   {
     id: 25,
@@ -209,6 +233,7 @@ export const itemData: items[] = [
     weight: 0.45,
     type: "mana",
     manaToRestore: 100,
+    itemType: "Consumable",
   },
   // POÇÕES - DEFENSE
   {
@@ -217,6 +242,7 @@ export const itemData: items[] = [
     weight: 0.4,
     type: "defense",
     defenseToIncrease: 3,
+    itemType: "Consumable",
   },
   {
     id: 27,
@@ -224,6 +250,7 @@ export const itemData: items[] = [
     weight: 0.5,
     type: "defense",
     defenseToIncrease: 5,
+    itemType: "Consumable",
   },
   {
     id: 28,
@@ -231,6 +258,7 @@ export const itemData: items[] = [
     weight: 0.3,
     type: "defense",
     defenseToIncrease: 2,
+    itemType: "Consumable",
   },
   // POÇÕES - STRENGTH
   {
@@ -240,6 +268,7 @@ export const itemData: items[] = [
     type: "strength",
     manaToRestore: 30,
     strengthToIncrease: 3,
+    itemType: "Consumable",
   },
   {
     id: 30,
@@ -248,5 +277,6 @@ export const itemData: items[] = [
     type: "strength",
     manaToRestore: 50,
     strengthToIncrease: 5,
+    itemType: "Consumable",
   },
 ];

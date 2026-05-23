@@ -7,6 +7,7 @@ const commonWeaponSchema = z.object({
   weight: z.number(),
   rarity: z.literal("Common"),
   damage: z.number().min(5).max(15),
+  itemType: z.literal("Weapon"),
 });
 
 const rareWeaponSchema = z.object({
@@ -15,6 +16,7 @@ const rareWeaponSchema = z.object({
   weight: z.number(),
   rarity: z.literal("Rare"),
   damage: z.number().min(15).max(25),
+  itemType: z.literal("Weapon"),
 });
 
 const epicWeaponSchema = z.object({
@@ -24,6 +26,7 @@ const epicWeaponSchema = z.object({
   rarity: z.literal("Common"),
   damage: z.number().min(25).max(35),
   bonus: z.number().min(0.1).max(1),
+  itemType: z.literal("Weapon"),
 });
 
 const mythicWeaponSchema = z.object({
@@ -32,6 +35,7 @@ const mythicWeaponSchema = z.object({
   rarity: z.literal("Common"),
   damage: z.number().min(36).max(40),
   bonus: z.number().min(0.5).max(1.5),
+  itemType: z.literal("Weapon"),
 });
 
 const legendaryWeaponSchema = z.object({
@@ -42,6 +46,7 @@ const legendaryWeaponSchema = z.object({
   damage: z.number().min(40).max(50),
   bonus: z.number().min(1).max(2),
   specialAttack: z.string(),
+  itemType: z.literal("Weapon"),
 });
 
 export const weaponsSchema = z.discriminatedUnion("rarity", [
@@ -61,6 +66,7 @@ const commonArmorSchema = z.object({
   defense: z.number().min(5).max(15),
   rarity: z.literal("Common"),
   armorType: z.array(z.enum(["Helmet", "Chestplate", "Pants", "Boots"])),
+  itemType: z.literal("Armor"),
 });
 
 const rareArmorSchema = z.object({
@@ -70,6 +76,7 @@ const rareArmorSchema = z.object({
   defense: z.number().min(15).max(25),
   rarity: z.literal("Rare"),
   armorType: z.array(z.enum(["Helmet", "Chestplate", "Pants", "Boots"])),
+  itemType: z.literal("Armor"),
 });
 
 const epicArmorSchema = z.object({
@@ -80,6 +87,7 @@ const epicArmorSchema = z.object({
   rarity: z.literal("Epic"),
   bonus: z.number().min(0.1).max(0.5),
   armorType: z.array(z.enum(["Helmet", "Chestplate", "Pants", "Boots"])),
+  itemType: z.literal("Armor"),
 });
 
 const mythicArmorSchema = z.object({
@@ -90,6 +98,7 @@ const mythicArmorSchema = z.object({
   rarity: z.literal("Mythic"),
   bonus: z.number().min(0.5).max(1),
   armorType: z.array(z.enum(["Helmet", "Chestplate", "Pants", "Boots"])),
+  itemType: z.literal("Armor"),
 });
 
 const legendaryArmorSchema = z.object({
@@ -100,6 +109,7 @@ const legendaryArmorSchema = z.object({
   rarity: z.literal("Legendary"),
   bonus: z.number().min(1).max(2),
   armorType: z.array(z.enum(["Helmet", "Chestplate", "Pants", "Boots"])),
+  itemType: z.literal("Armor"),
 });
 
 export const armorSchema = z.discriminatedUnion("rarity", [
@@ -118,6 +128,7 @@ const lifePotionSchema = z.object({
   weight: z.number(),
   type: z.literal("life"),
   lifeToRestore: z.number().min(1).max(100),
+  itemType: z.literal("Consumable"),
 });
 
 const manaPotionSchema = z.object({
@@ -126,6 +137,7 @@ const manaPotionSchema = z.object({
   weight: z.number(),
   type: z.literal("mana"),
   manaToRestore: z.number().min(1).max(100),
+  itemType: z.literal("Consumable"),
 });
 
 const defensePotionSchema = z.object({
@@ -134,6 +146,7 @@ const defensePotionSchema = z.object({
   weight: z.number(),
   type: z.literal("defense"),
   defenseToIncrease: z.number().min(2).max(5),
+  itemType: z.literal("Consumable"),
 });
 
 const strengthPotionSchema = z.object({
@@ -143,6 +156,7 @@ const strengthPotionSchema = z.object({
   type: z.literal("strength"),
   manaToRestore: z.number().min(1).max(100),
   strengthToIncrease: z.number().min(2).max(5),
+  itemType: z.literal("Consumable"),
 });
 
 export const potionsSchema = z.discriminatedUnion("type", [
