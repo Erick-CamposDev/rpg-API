@@ -24,3 +24,7 @@ export const deleteCharacterId = async (id: string) => {
   characterData.splice(index, 1);
   return true;
 };
+
+export const addNewPlayer = async (body: Character) => {
+  characterData.push(body);
+};

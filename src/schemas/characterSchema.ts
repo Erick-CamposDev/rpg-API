@@ -38,6 +38,12 @@ const mageSchema = z.object({
   inventory: inventorySchema,
 });
 
+export const characterSchema = z.discriminatedUnion("type", [
+  mageSchema,
+  warriorSchema,
+  tankSchema,
+]);
+
 export type Character =
   | z.infer<typeof warriorSchema>
   | z.infer<typeof tankSchema>
