@@ -40,3 +40,14 @@ export const getItemId = async (id: string) => {
 
   return foundItem;
 };
+
+export const deleteItemId = async (id: string) => {
+  const index = itemData.findIndex((item: items) => parseInt(id) === item.id);
+
+  if (index === -1) {
+    return false;
+  }
+
+  itemData.splice(index, 1);
+  return true;
+};
