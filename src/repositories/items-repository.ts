@@ -8,22 +8,21 @@ export const getItems = async () => {
 export const getItemRarityOrType = async (rarity?: string, type?: string) => {
   const itemFiltered = itemData.filter((item: items) => {
     if (rarity && type) {
-      if (item.itemType === "Consumable") {
-        return false;
+      if ("rarity" in item) {
+        return (
+          rarity.toLowerCase() === item.rarity.toLowerCase() &&
+          type.toLowerCase() === item.itemType.toLowerCase()
+        );
       }
-
-      return (
-        rarity.toLowerCase() === item.rarity.toLowerCase() &&
-        type.toLowerCase() === item.itemType.toLowerCase()
-      );
+      return false;
     }
 
     if (rarity) {
-      if (item.itemType === "Consumable") {
-        return false;
+      if ("rarity" in item) {
+        return rarity.toLowerCase() === item.rarity.toLowerCase();
       }
 
-      return rarity.toLowerCase() === item.rarity.toLowerCase();
+      return false;
     }
 
     if (type) {
