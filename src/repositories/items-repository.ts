@@ -34,3 +34,9 @@ export const getItemRarityOrType = async (rarity?: string, type?: string) => {
 
   return itemFiltered;
 };
+
+export const getItemId = async (id: string) => {
+  const foundItem = itemData.find((item: items) => parseInt(id) === item.id);
+
+  return foundItem;
+};
