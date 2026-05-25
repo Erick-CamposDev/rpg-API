@@ -1,5 +1,7 @@
 import Router from "express";
 
-const invetoryRoute = Router();
+const inventoryRoute = Router();
 
-export default invetoryRoute;
+inventoryRoute.get("/inventory");
+
+export default inventoryRoute;

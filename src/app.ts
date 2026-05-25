@@ -1,6 +1,6 @@
 import express, { json } from "express";
 import characterRoute from "./routes/character-routes";
-import invetoryRoute from "./routes/inventory-routes";
+import inventoryRoute from "./routes/inventory-routes";
 import itemRouter from "./routes/items-routes";
 
 export default function createApp() {
@@ -8,7 +8,7 @@ export default function createApp() {
   app.use(json());
 
   app.use("/rpgAPI", characterRoute);
-  app.use("/rpgAPI", invetoryRoute);
+  app.use("/rpgAPI", inventoryRoute);
   app.use("/rpgAPI", itemRouter);
 
   return app;
