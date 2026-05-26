@@ -143,6 +143,29 @@ const strengthPotionSchema = z.object({
   itemType: z.literal("Consumable"),
 });
 
+export const weaponsSchema = z.union([
+  commonWeaponSchema,
+  rareWeaponSchema,
+  epicWeaponSchema,
+  mythicWeaponSchema,
+  legendaryWeaponSchema,
+]);
+
+export const armorSchema = z.union([
+  commonArmorSchema,
+  rareArmorSchema,
+  epicArmorSchema,
+  mythicArmorSchema,
+  legendaryArmorSchema,
+]);
+
+export const potionsSchema = z.union([
+  lifePotionSchema,
+  manaPotionSchema,
+  defensePotionSchema,
+  strengthPotionSchema,
+]);
+
 export const itemsSchema = z.union([
   commonWeaponSchema,
   rareWeaponSchema,
@@ -162,4 +185,7 @@ export const itemsSchema = z.union([
   strengthPotionSchema,
 ]);
 
+export type weapons = z.infer<typeof weaponsSchema>;
+export type armors = z.infer<typeof armorSchema>;
+export type potions = z.infer<typeof potionsSchema>;
 export type items = z.infer<typeof itemsSchema>;

@@ -5,3 +5,5 @@ export const inventorySchema = z.object({
   armorSlots: z.array(armorSchema),
   items: z.array(z.union([potionsSchema, weaponsSchema])),
 });
+
+export type inventory = z.infer<typeof inventorySchema>;
