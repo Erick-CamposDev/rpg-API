@@ -51,3 +51,7 @@ export const deleteItemId = async (id: string) => {
   itemData.splice(index, 1);
   return true;
 };
+
+export const createItem = async (body: items) => {
+  itemData.push(body);
+};

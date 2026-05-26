@@ -166,6 +166,12 @@ export const potionsSchema = z.discriminatedUnion("type", [
   strengthPotionSchema,
 ]);
 
+export const itemsSchema = z.discriminatedUnion("itemType", [
+  weaponsSchema,
+  armorSchema,
+  potionsSchema,
+]);
+
 export type items =
   | z.infer<typeof weaponsSchema>
   | z.infer<typeof armorSchema>

@@ -1,5 +1,6 @@
 import idParamModel from "../models/paramsModel";
 import { queryItemModel } from "../models/queryItemModel";
+import createNewItemService from "../services/items-services/createNewItem";
 import deleteItemByIdService from "../services/items-services/deleteItemById";
 import getAllItemsService from "../services/items-services/getAllItems";
 import getItemByIdService from "../services/items-services/getItemById";
@@ -38,6 +39,14 @@ export async function deleteItemById(
   const id = req.params.id;
 
   const data = await deleteItemByIdService(id);
+
+  res.status(data.statusCode).json(data.body);
+}
+
+export async function createNewItem(req: Request, res: Response) {
+  const body = req.body;
+
+  const data = await createNewItemService(body);
 
   res.status(data.statusCode).json(data.body);
 }
