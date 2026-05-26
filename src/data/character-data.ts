@@ -69,7 +69,16 @@ export const characterData: Character[] = [
     maxWeight: 180,
     inventory: {
       armorSlots: [],
-      items: [],
+      items: [
+        {
+          id: 30,
+          name: "Power Surge Tonic",
+          weight: 0.5,
+          type: "strength",
+          strengthToIncrease: 5,
+          itemType: "Consumable",
+        },
+      ],
     },
   },
   {
