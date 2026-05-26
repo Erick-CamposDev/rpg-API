@@ -13,7 +13,7 @@ export default async function validateItemBody(
   if (!validatedSchema.success) {
     return res.status(StatusCode.BAD_REQUEST).json({
       message: "ERROR: Os dados enviados estão inválidos!",
-      errors: z.flattenError(validatedSchema.error).fieldErrors,
+      errors: z.flattenError(validatedSchema.error),
     });
   }
 
