@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { inventorySchema } from "./invetorySchema";
 
-const warriorSchema = z.object({
+export const warriorSchema = z.object({
   id: z.number(),
   name: z.string(),
   type: z.literal("Warrior"),
@@ -13,7 +13,7 @@ const warriorSchema = z.object({
   inventory: inventorySchema,
 });
 
-const tankSchema = z.object({
+export const tankSchema = z.object({
   id: z.number(),
   name: z.string(),
   type: z.literal("Tank"),
@@ -25,7 +25,7 @@ const tankSchema = z.object({
   inventory: inventorySchema,
 });
 
-const mageSchema = z.object({
+export const mageSchema = z.object({
   id: z.number(),
   name: z.string(),
   type: z.literal("Mage"),

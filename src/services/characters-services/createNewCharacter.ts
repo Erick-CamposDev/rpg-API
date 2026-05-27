@@ -1,6 +1,6 @@
 import { StatusCode } from "../../enums/status-codes";
 import { responseModel } from "../../models/responseModel";
-import { addNewPlayer } from "../../repositories/characters-repository";
+import { addNewCharacter } from "../../repositories/characters-repository";
 import { Character } from "../../schemas/characterSchema";
 
 export default async function createNewCharacterService(
@@ -13,7 +13,7 @@ export default async function createNewCharacterService(
     };
   }
 
-  await addNewPlayer(body);
+  await addNewCharacter(body);
 
   return {
     statusCode: StatusCode.CREATED,

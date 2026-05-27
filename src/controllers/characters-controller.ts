@@ -5,6 +5,8 @@ import deleteCharacterByIdService from "../services/characters-services/deleteCh
 import idParamModel from "../models/paramsModel";
 import { Character } from "../schemas/characterSchema";
 import createNewCharacterService from "../services/characters-services/createNewCharacter";
+import updateCharacterByIdService from "../services/characters-services/updateCharacterById";
+import { UpdatedCharacter } from "../schemas/updateCharacterSchemas";
 
 export async function getAllCharacters(req: Request, res: Response) {
   const data = await getAllCharactersService();
@@ -36,6 +38,18 @@ export async function createNewCharacter(req: Request, res: Response) {
   const body: Character = req.body;
 
   const data = await createNewCharacterService(body);
+
+  res.status(data.statusCode).json(data.body);
+}
+
+export async function updateCharacterById(
+  req: Request<idParamModel>,
+  res: Response,
+) {
+  const body: UpdatedCharacter = req.body;
+  const id = req.params.id;
+
+  const data = await updateCharacterByIdService(id, body);
 
   res.status(data.statusCode).json(data.body);
 }
