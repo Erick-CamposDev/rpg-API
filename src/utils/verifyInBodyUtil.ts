@@ -1,12 +1,13 @@
 import { updateItemId } from "../repositories/items-repository";
+import { updateItems } from "../schemas/updateItemSchemas";
 
-export default async function verifyInItemBody<T extends object>(
+export default async function verifyInItemBody(
   property: string,
-  body: T,
+  body: updateItems,
   id: string,
 ) {
   if (property in body) {
-    const propertyValue = (body as any)[property];
+    const propertyValue = body[property as keyof updateItems];
 
     if (propertyValue !== undefined) {
       await updateItemId(id, {

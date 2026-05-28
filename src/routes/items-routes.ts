@@ -5,6 +5,7 @@ import {
   getAllItems,
   getItemById,
   getItemsByRarityOrType,
+  updateItemById,
 } from "../controllers/items-controller";
 import validateItemBody from "../middlewares/validateItemBody";
 import validateUpdateItemBody from "../middlewares/validateUpdateItemBody";
@@ -19,6 +20,6 @@ itemRouter.delete("/items/:id", deleteItemById);
 
 itemRouter.post("/items", validateItemBody, createNewItem);
 
-itemRouter.patch("/items/id", validateUpdateItemBody, updateItemById);
+itemRouter.patch("/items/:id", validateUpdateItemBody, updateItemById);
 
 export default itemRouter;

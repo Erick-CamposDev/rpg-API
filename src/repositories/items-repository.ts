@@ -57,7 +57,7 @@ export const createItem = async (body: items) => {
 };
 
 export const updateItemId = async <T>(id: string, body: T) => {
-  const foundItem = getItemId(id);
+  const foundItem = await getItemId(id);
 
   if (!foundItem) {
     return false;
