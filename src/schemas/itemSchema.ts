@@ -1,7 +1,7 @@
 import z from "zod";
 
 //SCHEMAS DE ARMAS
-const commonWeaponSchema = z.object({
+export const commonWeaponSchema = z.object({
   id: z.number(),
   name: z.string(),
   weight: z.number(),
@@ -10,7 +10,7 @@ const commonWeaponSchema = z.object({
   itemType: z.literal("Weapon"),
 });
 
-const rareWeaponSchema = z.object({
+export const rareWeaponSchema = z.object({
   id: z.number(),
   name: z.string(),
   weight: z.number(),
@@ -19,7 +19,7 @@ const rareWeaponSchema = z.object({
   itemType: z.literal("Weapon"),
 });
 
-const epicWeaponSchema = z.object({
+export const epicWeaponSchema = z.object({
   id: z.number(),
   name: z.string(),
   weight: z.number(),
@@ -29,7 +29,7 @@ const epicWeaponSchema = z.object({
   itemType: z.literal("Weapon"),
 });
 
-const mythicWeaponSchema = z.object({
+export const mythicWeaponSchema = z.object({
   id: z.number(),
   name: z.string(),
   weight: z.number(),
@@ -39,7 +39,7 @@ const mythicWeaponSchema = z.object({
   itemType: z.literal("Weapon"),
 });
 
-const legendaryWeaponSchema = z.object({
+export const legendaryWeaponSchema = z.object({
   id: z.number(),
   name: z.string(),
   weight: z.number(),
@@ -52,7 +52,7 @@ const legendaryWeaponSchema = z.object({
 
 //SCHEMAS DE ARMADURAS
 
-const commonArmorSchema = z.object({
+export const commonArmorSchema = z.object({
   id: z.number(),
   name: z.string(),
   weight: z.number(),
@@ -62,7 +62,7 @@ const commonArmorSchema = z.object({
   itemType: z.literal("Armor"),
 });
 
-const rareArmorSchema = z.object({
+export const rareArmorSchema = z.object({
   id: z.number(),
   name: z.string(),
   weight: z.number(),
@@ -72,7 +72,7 @@ const rareArmorSchema = z.object({
   itemType: z.literal("Armor"),
 });
 
-const epicArmorSchema = z.object({
+export const epicArmorSchema = z.object({
   id: z.number(),
   name: z.string(),
   weight: z.number(),
@@ -83,7 +83,7 @@ const epicArmorSchema = z.object({
   itemType: z.literal("Armor"),
 });
 
-const mythicArmorSchema = z.object({
+export const mythicArmorSchema = z.object({
   id: z.number(),
   name: z.string(),
   weight: z.number(),
@@ -94,7 +94,7 @@ const mythicArmorSchema = z.object({
   itemType: z.literal("Armor"),
 });
 
-const legendaryArmorSchema = z.object({
+export const legendaryArmorSchema = z.object({
   id: z.number(),
   name: z.string(),
   weight: z.number(),
@@ -107,7 +107,7 @@ const legendaryArmorSchema = z.object({
 
 //SCHEMAS DE CONSUMÍVEIS
 
-const lifePotionSchema = z.object({
+export const lifePotionSchema = z.object({
   id: z.number(),
   name: z.string(),
   weight: z.number(),
@@ -116,7 +116,7 @@ const lifePotionSchema = z.object({
   itemType: z.literal("Consumable"),
 });
 
-const manaPotionSchema = z.object({
+export const manaPotionSchema = z.object({
   id: z.number(),
   name: z.string(),
   weight: z.number(),
@@ -125,7 +125,7 @@ const manaPotionSchema = z.object({
   itemType: z.literal("Consumable"),
 });
 
-const defensePotionSchema = z.object({
+export const defensePotionSchema = z.object({
   id: z.number(),
   name: z.string(),
   weight: z.number(),
@@ -134,7 +134,7 @@ const defensePotionSchema = z.object({
   itemType: z.literal("Consumable"),
 });
 
-const strengthPotionSchema = z.object({
+export const strengthPotionSchema = z.object({
   id: z.number(),
   name: z.string(),
   weight: z.number(),

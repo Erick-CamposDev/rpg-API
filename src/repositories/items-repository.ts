@@ -55,3 +55,14 @@ export const deleteItemId = async (id: string) => {
 export const createItem = async (body: items) => {
   itemData.push(body);
 };
+
+export const updateItemId = async <T>(id: string, body: T) => {
+  const foundItem = getItemId(id);
+
+  if (!foundItem) {
+    return false;
+  }
+
+  Object.assign(foundItem, body);
+  return true;
+};
