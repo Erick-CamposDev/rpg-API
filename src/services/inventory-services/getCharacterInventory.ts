@@ -4,7 +4,7 @@ import { getCharacterInventory } from "../../repositories/inventories-repository
 
 export default async function getCharacterInventoryService(
   id: string,
-): Promise<responseModel> {
+): Promise<responseModel<typeof repositoryData | string>> {
   const repositoryData = await getCharacterInventory(id);
 
   if (!repositoryData) {

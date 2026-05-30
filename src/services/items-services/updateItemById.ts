@@ -13,7 +13,7 @@ import verifyInItemBody from "../../utils/verifyInBodyUtil";
 export default async function updateItemByIdService(
   id: string,
   body: updateItems,
-): Promise<responseModel> {
+): Promise<responseModel<string>> {
   const repositoryData = await getItemId(id);
 
   if (!repositoryData) {

@@ -4,7 +4,7 @@ import { getItemId } from "../../repositories/items-repository";
 
 export default async function getItemByIdService(
   id: string,
-): Promise<responseModel> {
+): Promise<responseModel<typeof repositoryData | string>> {
   const repositoryData = await getItemId(id);
 
   if (!repositoryData) {

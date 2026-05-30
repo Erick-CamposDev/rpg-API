@@ -4,7 +4,7 @@ import { getCharacterId } from "../../repositories/characters-repository";
 
 export default async function getCharacterByIdService(
   id: string,
-): Promise<responseModel> {
+): Promise<responseModel<typeof repositoryData | string>> {
   const repositoryData = await getCharacterId(id);
 
   if (!repositoryData) {

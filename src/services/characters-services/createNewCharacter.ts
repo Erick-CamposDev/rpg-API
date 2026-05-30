@@ -5,7 +5,7 @@ import { Character } from "../../schemas/characterSchema";
 
 export default async function createNewCharacterService(
   body: Character,
-): Promise<responseModel> {
+): Promise<responseModel<string>> {
   if (Object.keys(body).length === 0) {
     return {
       statusCode: StatusCode.BAD_REQUEST,

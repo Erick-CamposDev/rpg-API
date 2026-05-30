@@ -5,7 +5,7 @@ import { getItemRarityOrType } from "../../repositories/items-repository";
 export default async function getItemByRarityOrTypeService(
   rarity?: string,
   type?: string,
-): Promise<responseModel> {
+): Promise<responseModel<typeof repositoryData | string>> {
   if (!rarity && !type) {
     return {
       statusCode: StatusCode.BAD_REQUEST,

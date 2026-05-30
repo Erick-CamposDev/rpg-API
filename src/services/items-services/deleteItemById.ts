@@ -4,7 +4,7 @@ import { deleteItemId } from "../../repositories/items-repository";
 
 export default async function deleteItemByIdService(
   id: string,
-): Promise<responseModel> {
+): Promise<responseModel<string>> {
   const isDeleted = await deleteItemId(id);
 
   if (!isDeleted) {

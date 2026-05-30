@@ -5,7 +5,7 @@ import { items } from "../../schemas/itemSchema";
 
 export default async function createNewItemService(
   body: items,
-): Promise<responseModel> {
+): Promise<responseModel<string>> {
   if (Object.keys(body).length === 0) {
     return {
       statusCode: StatusCode.BAD_REQUEST,

@@ -9,7 +9,7 @@ import { UpdatedCharacter } from "../../schemas/updateCharacterSchemas";
 export default async function updateCharacterByIdService(
   id: string,
   body: UpdatedCharacter,
-): Promise<responseModel> {
+): Promise<responseModel<string>> {
   const foundCharacter = await getCharacterId(id);
 
   if (!foundCharacter) {

@@ -4,7 +4,7 @@ import { deleteCharacterId } from "../../repositories/characters-repository";
 
 export default async function deleteCharacterByIdService(
   id: string,
-): Promise<responseModel> {
+): Promise<responseModel<string>> {
   const isDeleted = await deleteCharacterId(id);
 
   if (!isDeleted) {

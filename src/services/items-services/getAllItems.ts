@@ -2,7 +2,9 @@ import { StatusCode } from "../../enums/status-codes";
 import { responseModel } from "../../models/responseModel";
 import { getItems } from "../../repositories/items-repository";
 
-export default async function getAllItemsService(): Promise<responseModel> {
+export default async function getAllItemsService(): Promise<
+  responseModel<typeof repositoryData | string>
+> {
   const repositoryData = await getItems();
 
   if (!repositoryData) {
