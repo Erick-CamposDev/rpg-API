@@ -1,6 +1,6 @@
 import { characterData } from "../data/character-data";
 import { Character } from "../schemas/characterSchema";
-import { potions, weapons } from "../schemas/itemSchema";
+import { armors, potions, weapons } from "../schemas/itemSchema";
 import { getCharacterId } from "./characters-repository";
 
 export const getCharacterInventory = async (id: string) => {
@@ -27,4 +27,23 @@ export const addItemInInventory = async (
 
   characterFound.currentWeight += body.weight;
   characterFound.inventory.items.push(body);
+};
+
+export const equipArmorRepo = async (id: string, body: armors) => {
+  const characterFound = await getCharacterId(id);
+
+  if (!characterFound) {
+    return false;
+  }
+
+  const characterArmorSlots = characterFound.inventory.armorSlots;
+
+  if ("bonus" in body) {
+    const bonusedDefense = body.defense + body.bonus * body.defense;
+    characterFound.baseDefense += bonusedDefense;
+  }
+
+  characterFound.baseDefense += body.defense;
+  characterFound.currentWeight += body.weight;
+  characterArmorSlots.push(body);
 };
