@@ -1,8 +1,9 @@
 import Router from "express";
+import { drawArmor, drawItem } from "../controllers/loot-controller";
 
 const lootRouter = Router();
 
-lootRouter.post("character/:id/draw/item");
-lootRouter.post("character/:id/draw/armor");
+lootRouter.post("/characters/:id/draw/item", drawItem);
+lootRouter.post("/characters/:id/draw/armor", drawArmor);
 
 export default lootRouter;

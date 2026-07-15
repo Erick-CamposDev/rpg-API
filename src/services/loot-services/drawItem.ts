@@ -2,15 +2,13 @@ import { StatusCode } from "../../enums/status-codes";
 import { responseModel } from "../../models/responseModel";
 import { getCharacterId } from "../../repositories/characters-repository";
 import { drawRandomItem } from "../../repositories/loot-repository";
-import { items } from "../../schemas/itemSchema";
 
 export default async function drawItemService(
   id: string,
 ): Promise<responseModel<typeof itemRepository | string>> {
-  const characterInformation = await getCharacterId(id);
   const itemRepository = await drawRandomItem(id);
 
-  if (!characterInformation) {
+  if (!itemRepository) {
     return {
       statusCode: StatusCode.NOT_FOUND,
       body: "ERROR: Character not found!",
@@ -19,6 +17,7 @@ export default async function drawItemService(
 
   return {
     statusCode: StatusCode.CREATED,
+    message: `O ITEM SORTEADO FOI ${itemRepository.name}`,
     body: itemRepository,
   };
 }

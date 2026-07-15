@@ -1,6 +1,5 @@
 import { characterData } from "../data/character-data";
 import { Character } from "../schemas/characterSchema";
-import { UpdatedCharacter } from "../schemas/updateCharacterSchemas";
 
 export const getCharacters = async () => {
   return characterData;

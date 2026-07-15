@@ -9,6 +9,7 @@ export const warriorSchema = z.object({
   baseDefense: z.number().min(10),
   baseHealthPoints: z.number().min(100),
   level: z.number().min(0).max(100),
+  currentWeight: z.number(),
   maxWeight: z.number(),
   inventory: inventorySchema,
 });
@@ -21,6 +22,7 @@ export const tankSchema = z.object({
   baseDefense: z.number().min(50),
   baseHealthPoints: z.number().min(120),
   level: z.number().min(0).max(100),
+  currentWeight: z.number(),
   maxWeight: z.number(),
   inventory: inventorySchema,
 });
@@ -34,6 +36,7 @@ export const mageSchema = z.object({
   baseDefense: z.number().min(10),
   baseHealthPoints: z.number().min(100),
   level: z.number().min(0).max(100),
+  currentWeight: z.number(),
   maxWeight: z.number(),
   inventory: inventorySchema,
 });
