@@ -9,6 +9,7 @@ export const characterData: Character[] = [
     baseDefense: 20,
     baseHealthPoints: 150,
     level: 5,
+    currentWeight: 0,
     maxWeight: 100,
     inventory: {
       armorSlots: [],
@@ -23,6 +24,7 @@ export const characterData: Character[] = [
     baseDefense: 60,
     baseHealthPoints: 200,
     level: 8,
+    currentWeight: 0,
     maxWeight: 150,
     inventory: {
       armorSlots: [],
@@ -38,6 +40,7 @@ export const characterData: Character[] = [
     baseDefense: 15,
     baseHealthPoints: 120,
     level: 6,
+    currentWeight: 0,
     maxWeight: 60,
     inventory: {
       armorSlots: [],
@@ -52,6 +55,7 @@ export const characterData: Character[] = [
     baseDefense: 25,
     baseHealthPoints: 180,
     level: 10,
+    currentWeight: 0,
     maxWeight: 120,
     inventory: {
       armorSlots: [],
@@ -66,19 +70,11 @@ export const characterData: Character[] = [
     baseDefense: 70,
     baseHealthPoints: 250,
     level: 12,
+    currentWeight: 0,
     maxWeight: 180,
     inventory: {
       armorSlots: [],
-      items: [
-        {
-          id: 30,
-          name: "Power Surge Tonic",
-          weight: 0.5,
-          type: "strength",
-          strengthToIncrease: 5,
-          itemType: "Consumable",
-        },
-      ],
+      items: [],
     },
   },
   {
@@ -90,6 +86,7 @@ export const characterData: Character[] = [
     baseDefense: 20,
     baseHealthPoints: 130,
     level: 9,
+    currentWeight: 0,
     maxWeight: 70,
     inventory: {
       armorSlots: [],
