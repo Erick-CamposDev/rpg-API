@@ -47,3 +47,28 @@ export const equipArmorRepo = async (id: string, body: armors) => {
   characterFound.currentWeight += body.weight;
   characterArmorSlots.push(body);
 };
+
+export const deleteItemInCharacterInventory = async (
+  id: string,
+  slot: string,
+) => {
+  const characterFound = await getCharacterId(id);
+
+  if (!characterFound) {
+    return false;
+  }
+
+  const characterItems = characterFound.inventory.items;
+
+  const index = characterItems.findIndex(
+    (item: weapons | potions) => parseInt(slot) === item.id,
+  );
+
+  if (index === -1) {
+    return false;
+  }
+
+  characterItems.splice(index, 1);
+
+  return true;
+};
