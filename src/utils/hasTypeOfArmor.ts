@@ -1,6 +1,6 @@
 import { armors } from "../schemas/itemSchema";
 
-type ArmorType = "Helmet" | "Chestplate" | "Pants" | "Boots";
+export type ArmorType = "Helmet" | "Chestplate" | "Pants" | "Boots";
 
 export default async function hasTypeOfArmor(
   type: ArmorType,
