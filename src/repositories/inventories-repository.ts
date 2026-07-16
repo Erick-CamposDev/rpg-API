@@ -67,7 +67,7 @@ export const deleteItemInCharacterInventory = async (
   }
 
   characterFound.currentWeight -= itemToRemove.weight;
-  characterItems.splice(slotIndex, 1);
+  characterItems.splice(slotIndex - 1, 1);
 
   return true;
 };
@@ -88,6 +88,6 @@ export const unequipCharacterArmor = async (id: string, slot: string) => {
   }
 
   characterFound.currentWeight -= armorToRemove.weight;
-  characterArmorSlots.splice(slotIndex, 1);
+  characterArmorSlots.splice(slotIndex - 1, 1);
   return true;
 };
