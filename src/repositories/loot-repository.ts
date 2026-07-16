@@ -1,21 +1,12 @@
 import { itemData } from "../data/item-data";
 import { items } from "../schemas/itemSchema";
-import { getCharacterId } from "./characters-repository";
 
-export const drawRandomItem = async (id: string) => {
+export const drawRandomItem = async () => {
   const itemsWithoutArmors = itemData.filter(
     (item: items) => item.itemType !== "Armor",
   );
 
-  const randomIndex = Math.floor(Math.random() * itemsWithoutArmors.length + 1);
-
-  const foundPlayer = await getCharacterId(id);
-
-  if (!foundPlayer) {
-    return false;
-  }
-
-  foundPlayer.inventory.items.push(itemsWithoutArmors[randomIndex]);
+  const randomIndex = Math.floor(Math.random() * itemsWithoutArmors.length);
 
   return itemsWithoutArmors[randomIndex];
 };

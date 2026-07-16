@@ -32,7 +32,7 @@ export default async function equipArmorService(
   if (foundCharacter.currentWeight > foundCharacter.maxWeight) {
     return {
       statusCode: StatusCode.BAD_REQUEST,
-      body: "ERROR: Peso máximo atingido!",
+      body: "LIMITE DE PESO TOTAL DO PERSONAGEM ATINGIDO!",
     };
   }
 

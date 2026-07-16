@@ -8,16 +8,16 @@ export default async function addItemInInventoryService(
   id: string,
   body: weapons | potions,
 ): Promise<responseModel<string>> {
-  const repositoryData = await getCharacterId(id);
+  const characterFound = await getCharacterId(id);
 
-  if (!repositoryData) {
+  if (!characterFound) {
     return {
       statusCode: StatusCode.NOT_FOUND,
       body: "ERROR: Character not found!",
     };
   }
 
-  if (repositoryData.currentWeight >= repositoryData?.maxWeight) {
+  if (characterFound.currentWeight >= characterFound?.maxWeight) {
     return {
       statusCode: StatusCode.BAD_REQUEST,
       body: "ERROR: LIMITE DE PESO TOTAL DO PERSONAGEM ATINGIDO!",
@@ -27,6 +27,6 @@ export default async function addItemInInventoryService(
   await addItemInInventory(id, body);
   return {
     statusCode: StatusCode.CREATED,
-    body: `Added new item in Character: ${repositoryData.name} successfully!`,
+    body: `Added new item in Character: ${characterFound.name} successfully!`,
   };
 }
