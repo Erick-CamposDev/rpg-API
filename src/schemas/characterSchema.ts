@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { inventorySchema } from "./invetorySchema";
+import { inventorySchema } from "./inventorySchema";
 
 export const warriorSchema = z.object({
   id: z.number(),
