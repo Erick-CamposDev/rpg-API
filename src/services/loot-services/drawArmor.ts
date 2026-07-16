@@ -31,7 +31,7 @@ export default async function drawArmorService(
   if (foundCharacter.currentWeight >= foundCharacter.maxWeight) {
     return {
       statusCode: StatusCode.BAD_REQUEST,
-      body: "ERROR: Peso máximo do personagem atingido!",
+      body: "LIMITE DE PESO TOTAL DO PERSONAGEM ATINGIDO!",
     };
   }
 
