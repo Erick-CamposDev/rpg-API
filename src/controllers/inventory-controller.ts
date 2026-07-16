@@ -2,9 +2,10 @@ import { Request, Response } from "express";
 import idParamModel from "../models/paramsModel";
 import getCharacterInventoryService from "../services/inventory-services/getCharacterInventory";
 import { armors, potions, weapons } from "../schemas/itemSchema";
-import addItemInInventoryService from "../services/inventory-services/addItemInInentory";
+import addItemInInventoryService from "../services/inventory-services/addItemInInventory";
 import equipArmorService from "../services/inventory-services/equipArmor";
 import deleteItemInInventoryService from "../services/inventory-services/deleteItemInInventory";
+import unequipArmorService from "../services/inventory-services/unequipArmor";
 
 export async function getCharacterInventoryById(
   req: Request<idParamModel>,
@@ -50,4 +51,11 @@ export async function deleteItemInInventory(
   res.status(data.statusCode).json(data.body);
 }
 
-export async function unequipArmor(req: Request<idParamModel>, res: Response) {}
+export async function unequipArmor(req: Request<idParamModel>, res: Response) {
+  const id = req.params.id;
+  const armorSlot = req.params.slot;
+
+  const data = await unequipArmorService(id, armorSlot);
+
+  res.status(data.statusCode).json(data.body);
+}

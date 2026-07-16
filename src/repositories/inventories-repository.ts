@@ -59,16 +59,33 @@ export const deleteItemInCharacterInventory = async (
   }
 
   const characterItems = characterFound.inventory.items;
+  const slotIndex = Number(slot);
+  const itemToRemove = characterItems[slotIndex - 1];
 
-  const index = characterItems.findIndex(
-    (item: weapons | potions) => parseInt(slot) === item.id,
-  );
-
-  if (index === -1) {
+  if (!itemToRemove) {
     return false;
   }
 
-  characterItems.splice(index, 1);
+  characterItems.splice(slotIndex, 1);
 
+  return true;
+};
+
+export const unequipCharacterArmor = async (id: string, slot: string) => {
+  const characterFound = await getCharacterId(id);
+
+  if (!characterFound) {
+    return false;
+  }
+
+  const characterArmorSlots = characterFound.inventory.armorSlots;
+  const slotIndex = Number(slot);
+  const armorToRemove = characterArmorSlots[slotIndex - 1];
+
+  if (!armorToRemove) {
+    return false;
+  }
+
+  characterArmorSlots.splice(slotIndex, 1);
   return true;
 };
