@@ -6,22 +6,27 @@ import {
   createNewCharacter,
   updateCharacterById,
 } from "../controllers/characters-controller";
-import validateCharacterBody from "../middlewares/validateCharacterBody";
 import validateUpdateCharacterBody from "../middlewares/validateUpdateCharacterBody";
 import idParamModel from "../models/paramsModel";
+import { characterSchema } from "../schemas/characterSchema";
+import { updatedSchemas } from "../schemas/updateCharacterSchemas";
+import validateBodySchema from "../middlewares/validateBody";
 
 const characterRoute = Router();
 
 characterRoute.get("/characters", getAllCharacters);
 characterRoute.get("/characters/:id", getCharacterById);
 
-characterRoute.post("/characters", validateCharacterBody, createNewCharacter);
+characterRoute.post(
+  "/characters",
+  validateBodySchema(characterSchema),
+  createNewCharacter,
+);
 
 characterRoute.delete("/characters/:id", deleteCharacterById);
-
-characterRoute.patch<idParamModel>(
+characterRoute.patch(
   "/characters/:id",
-  validateUpdateCharacterBody,
+  validateBodySchema(updatedSchemas),
   updateCharacterById,
 );
 

@@ -16,7 +16,7 @@ export default async function validateUpdateItemBody(
       message: "ERRO: Os dados enviados estão inválidos!",
       errors: z.flattenError(validatedSchema.error).fieldErrors,
     });
-  }
+  }                                                                 
 
   next();
 }

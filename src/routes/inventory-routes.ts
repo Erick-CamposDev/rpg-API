@@ -8,6 +8,12 @@ import {
 } from "../controllers/inventory-controller";
 import validateArmorBody from "../middlewares/validateArmorBody";
 import validateWeaponAndConsumable from "../middlewares/validateWeaponAndConsumable";
+import {
+  armorSchema,
+  potionsSchema,
+  weaponsSchema,
+} from "../schemas/itemSchema";
+import validateBody from "../middlewares/validateBody";
 
 const inventoryRoute = Router();
 
@@ -15,12 +21,12 @@ inventoryRoute.get("/characters/:id/inventory", getCharacterInventoryById);
 
 inventoryRoute.post(
   "/characters/:id/inventory/items",
-  validateWeaponAndConsumable,
+  validateBody(weaponsSchema, potionsSchema),
   addItemInCharacterInventory,
 );
 inventoryRoute.post(
   "/characters/:id/inventory/armors",
-  validateArmorBody,
+  validateBody(armorSchema),
   equipArmor,
 );
 

@@ -1,4 +1,4 @@
-import { Request, Response } from "express";
+import { Request, RequestHandler, Response } from "express";
 import getAllCharactersService from "../services/characters-services/getAllCharacters";
 import getCharacterByIdService from "../services/characters-services/getCharacterById";
 import deleteCharacterByIdService from "../services/characters-services/deleteCharacterById";
@@ -42,14 +42,14 @@ export async function createNewCharacter(req: Request, res: Response) {
   res.status(data.statusCode).json(data.body);
 }
 
-export async function updateCharacterById(
-  req: Request<idParamModel>,
-  res: Response,
-) {
+export const updateCharacterById: RequestHandler<idParamModel> = async (
+  req,
+  res,
+) => {
   const body: UpdatedCharacter = req.body;
   const id = req.params.id;
 
   const data = await updateCharacterByIdService(id, body);
 
   res.status(data.statusCode).json(data.body);
-}
+};
