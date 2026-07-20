@@ -6,8 +6,6 @@ import {
   createNewCharacter,
   updateCharacterById,
 } from "../controllers/characters-controller";
-import validateUpdateCharacterBody from "../middlewares/validateUpdateCharacterBody";
-import idParamModel from "../models/paramsModel";
 import { characterSchema } from "../schemas/characterSchema";
 import { updatedSchemas } from "../schemas/updateCharacterSchemas";
 import validateBodySchema from "../middlewares/validateBody";

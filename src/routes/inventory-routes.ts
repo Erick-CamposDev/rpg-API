@@ -6,8 +6,6 @@ import {
   getCharacterInventoryById,
   unequipArmor,
 } from "../controllers/inventory-controller";
-import validateArmorBody from "../middlewares/validateArmorBody";
-import validateWeaponAndConsumable from "../middlewares/validateWeaponAndConsumable";
 import {
   armorSchema,
   potionsSchema,
